@@ -1,4 +1,4 @@
-# V2 is below V1
+# password generator V2 is below generator V1
 import random
 import string
 
