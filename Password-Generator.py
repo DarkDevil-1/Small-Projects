@@ -4,7 +4,7 @@ import string
 
 
 def error():
-    print('You have entered an Invalid value, TRY AGAIN')
+    print('You have entered an invalid value, TRY AGAIN')
     print('=' * 80, 'RESTART', '=' * 80)
 
 
@@ -13,12 +13,12 @@ def pass_gen_v1():
     pandora_box = list(string.ascii_letters + string.digits)
     while True:
         try:
-            length = int(input('Enter Password Length: '))
+            length = int(input('Enter password length: '))
         except ValueError:
             error()
         else:
             break
-    special_symbols = input('Do You Need Special Symbols In Your Password (Y/N): ')
+    special_symbols = input('Do you need special symbols in your password (Y/N): ')
 
     if special_symbols == 'Y' or 'y':
         pandora_box += list(symbols)
@@ -34,7 +34,7 @@ def pass_gen_v1():
     random.shuffle(password)
     # Since we needa convert the password to string to make it presentable we do this,
     print('\n')
-    print(''.join(password), 'Is Your Generated Password')
+    print(''.join(password), 'Is your generated password')
     # SUCCESS!!! Now we can run this function by running it
 
 
@@ -46,14 +46,14 @@ def pass_gen_v2():
 
     while True:
         try:
-            length = int(input('Enter Password Length: '))
+            length = int(input('Enter password length: '))
         except ValueError:
             error()
         else:
             break
 
-    choice = input('Do You Want Symbols In Your Password (Y/N): ')
-    choice_2 = input('Do You Wanna Choose The Specific Amount Of Characters For Each Type (Y/N): ')
+    choice = input('Do you want to include symbols in your password (Y/N): ')
+    choice_2 = input('Do you wanna choose the specific amount of characters for each type (Y/N): ')
     yes = 'Y', 'y'
     no = 'N', 'n'
     if choice in yes and choice_2 in yes:
@@ -72,7 +72,7 @@ def pass_gen_v2():
 
         pandora_count = letter_count + number_count + symbol_count
         if pandora_count > length:
-            print("Total Character Count Exceeds Password Length, TRY AGAIN")
+            print("Total character count exceeds password length, TRY AGAIN")
             pass_gen_v2()
 
         else:
@@ -93,7 +93,7 @@ def pass_gen_v2():
                     password.append(random.choice(pandora_box))
 
             random.shuffle(password)
-            print('\n', ''.join(password), 'Is The Generated Password')
+            print('\n', ''.join(password), 'Is the generated password')
 
     elif choice in no and choice_2 in yes:
         while True:
@@ -127,7 +127,7 @@ def pass_gen_v2():
                     password.append(random.choice(pandora_box))
 
                     random.shuffle(password)
-                    print('\n', ''.join(password), 'Is The Generated Password')
+                    print('\n', ''.join(password), 'Is the generated password')
 
     elif choice in yes and choice_2 in no:
         pandora_box += list(symbols)
@@ -136,14 +136,14 @@ def pass_gen_v2():
         for x in range(length):
             password.append(random.choice(pandora_box))
         random.shuffle(password)
-        print('\n', ''.join(password), 'Is The Generated Password')
+        print('\n', ''.join(password), 'Is the generated password')
     else:
         random.shuffle(pandora_box)
         password = []
         for x in range(length):
             password.append(random.choice(pandora_box))
         random.shuffle(password)
-        print('\n', ''.join(password), 'Is The Generated Password')
+        print('\n', ''.join(password), 'Is the generated password')
 
 
 pass_gen_v2()
