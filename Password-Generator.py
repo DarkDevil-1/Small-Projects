@@ -129,8 +129,6 @@ def pass_gen_v2():
                     random.shuffle(password)
                     print('\n', ''.join(password), 'Is The Generated Password')
 
-
-
     elif choice in yes and choice_2 in no:
         pandora_box += list(symbols)
         random.shuffle(pandora_box)
