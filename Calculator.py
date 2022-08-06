@@ -53,3 +53,42 @@ def arithmetic_calc():
             error()
         else:
             break
+
+
+def quad():
+    while True:
+        try:
+            print("************** QUADRATIC EQUATION ROOTS CALCULATOR **************")
+            print('Of the form ax^2 + bx + c = 0')
+            a = int(input('Enter value of A: '))
+            b = int(input('Enter value of B: '))
+            c = int(input('Enter value of C: '))
+            if a == 0:
+                print('THE VALUE OF A CANNOT BE 0, PLEASE TRY AGAIN')
+            else:
+                delta = b ** 2 - (4 * a * c)
+                root1 = (-b + math.sqrt(delta)) / 2 * a
+                root2 = (-b - math.sqrt(delta)) / 2 * a
+                if delta == 0:
+                    print('\nThe roots of the equation')
+                    print(a, 'x^2 + ', b, 'x + ', c, ' = 0', sep='')
+                    print('\nIS =', [root1, root2])
+                    print('The roots of this equation are real and equal')
+                elif delta > 0:
+                    print('\nThe roots of the equation')
+                    print(a, 'x^2 + ', b, 'x + ', c, ' = 0', sep='')
+                    print('\nIS =', [root1, root2])
+                    print('The roots of this equation are real and distinct')
+                elif delta < 0:
+                    root1 = (-b + (delta ** 0.5)) / 2 * a
+                    root2 = (-b - (delta ** 0.5)) / 2 * a
+                    print('\nThe roots of the equation')
+                    print(a, 'x^2 + ', b, 'x + ', c, ' = 0', sep='')
+                    print('IS =', [root1, root2])
+
+                    print('\nThe roots are complex and imaginary')
+            print('\nProgram Over')
+        except ValueError:
+            error()
+        else:
+            break
