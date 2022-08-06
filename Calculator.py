@@ -92,3 +92,24 @@ def quad():
             error()
         else:
             break
+
+
+def factorial():
+    while True:
+        try:
+            num = int(input('Enter Number:'))
+            if num == 0:
+                print('Factorial of 0 is 1')
+            elif num < 0:
+                print('Factorial does not exist for -ve numbers')
+            else:
+                fact = 1
+                index = 1
+                while index <= num:
+                    fact *= index
+                    index += 1
+                print('The Factorial of', num, 'is', fact)
+        except ValueError:
+            error()
+        else:
+            break
