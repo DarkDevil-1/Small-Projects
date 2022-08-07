@@ -1,4 +1,3 @@
-import sys
 import math
 
 
@@ -8,19 +7,18 @@ def error():
 
 
 def arithmetic_calc():
+    print(
+        '***** FOR LOGARITHM, ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, SQUARE-ROOT, POWER, RADIAN, DEGREE, '
+        'REMAINDER *****')
+    print('OPERATORS = log , + , - , * , /, %, sqrt , ^, rad, deg')
     while True:
-        print(
-            '***** FOR LOGARITHM, ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, SQUARE-ROOT, POWER, RADIAN, DEGREE, '
-            'REMAINDER *****')
-        print('OPERATORS = log , + , - , * , /, %, sqrt , ^, rad, deg')
-
         try:
             num1 = float(input('Number 1 here:'))
             op = input('Enter Operator:')
             operator = 'log', '+', '-', '^', '*', '/', 'sqrt', 'rad', 'deg'
             if op not in operator:
                 print('Invalid Operator')
-                sys.exit()
+                continue
             if op == 'log':
                 log = math.log10(num1)
                 print('Answer:', log)
