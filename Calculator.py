@@ -111,3 +111,28 @@ def factorial():
             error()
         else:
             break
+
+
+def main():
+    while True:
+        print('\n1. Arithmetic Calculator')
+        print('2. Quadratic Equation Calculator')
+        print('3. Factorial Calculator')
+        print('4. Exit\n')
+        try:
+            choice = int(input('Enter your choice:'))
+            if choice == 1:
+                arithmetic_calc()
+            elif choice == 2:
+                quad()
+            elif choice == 3:
+                factorial()
+            elif choice == 4:
+                print('\nThank You')
+                break
+            else:
+                print('Invalid Choice\n')
+        except ValueError:
+            error()
+        else:
+            break
