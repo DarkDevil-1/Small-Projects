@@ -21,8 +21,6 @@ p1 = [1500, 1]
 p1_property = []
 p2 = [1500, 1]
 p2_property = []
-p3 = [1500, 1]
-p3_property = []
 
 
 def dice():
@@ -33,7 +31,7 @@ def cpu():
     if p2[0] <= 60:
         global game_winner
         game_winner = 1
-        return ('CPU has gone bankrupt, You win')
+        return 'CPU has gone bankrupt, You win'
     print('CPU is rolling the dice...')
     time.sleep(1)
     x = dice()
@@ -45,13 +43,13 @@ def cpu():
     if p2[1] in traps:
         if p2[1] == 5:
             p2[0] -= 200
-            return ('CPU has been hit by the Income Tax')
+            return 'CPU has been hit by the Income Tax'
         elif p2[1] == 39:
             p2[0] -= 400
-            return ('CPU has been hit by the Super Tax')
+            return 'CPU has been hit by the Super Tax'
         elif p2[1] == 31:
             p2[1] = 11
-            return ('CPU has been sent to Jail')
+            return 'CPU has been sent to Jail'
     elif p2[1] in purchasable:
         print(f'CPU has landed on {landmarks[p2[1]]} and it costs ${cost[p2[1]]}')
         if p2[0] >= cost[p2[1]]:
@@ -63,28 +61,28 @@ def cpu():
                 p2_property.append(p2[1])
                 purchasable.remove(p2[1])
                 owned.append(p2[1])
-                return (f'CPU now has ${p2[0]}')
+                return f'CPU now has ${p2[0]}'
             else:
-                return ('CPU has decided not to buy the property')
+                return 'CPU has decided not to buy the property'
         else:
-            return ('CPU does not have enough money to buy the property')
+            return 'CPU does not have enough money to buy the property'
     elif p2[1] in owned:
         if p2[1] in p1_property:
             print(f'CPU has landed on {landmarks[p2[1]]} which is owned by you')
             print('CPU is paying rent')
             p2[0] -= cost[p2[1]]
             p1[0] += cost[p2[1]]
-            return (f'CPU now has ${p2[0]}')
+            return f'CPU now has ${p2[0]}'
     else:
         print(f'CPU has landed on {landmarks[p2[1]]}')
-        return ('CPU has done nothing')
+        return 'CPU has done nothing'
 
 
 def player1():
     if p1[0] <= 60:
         global game_winner
         game_winner = 1
-        return ('You have gone bankrupt, Opponent wins')
+        return 'You have gone bankrupt, Opponent wins'
     print('You are rolling the dice...')
     time.sleep(1)
     x = dice()
@@ -96,13 +94,13 @@ def player1():
     if p1[1] in traps:
         if p1[1] == 5:
             p1[0] -= 200
-            return ('You have been hit by the Income Tax')
+            return 'You have been hit by the Income Tax'
         elif p1[1] == 39:
             p1[0] -= 400
-            return ('You have been hit by the Super Tax')
+            return 'You have been hit by the Super Tax'
         elif p1[1] == 31:
             p1[1] = 11
-            return ('You have been sent to Jail')
+            return 'You have been sent to Jail'
     elif p1[1] in purchasable:
         print(f'You have landed on {landmarks[p1[1]]} and it costs ${cost[p1[1]]}')
         if p1[0] >= cost[p1[1]]:
@@ -114,28 +112,28 @@ def player1():
                 p1_property.append(p1[1])
                 purchasable.remove(p1[1])
                 owned.append(p1[1])
-                return (f'You now have ${p1[0]}')
+                return f'You now have ${p1[0]}'
             else:
-                return ('You have decided not to buy the property')
+                return 'You have decided not to buy the property'
         else:
-            return ('You do not have enough money to buy the property')
+            return 'You do not have enough money to buy the property'
     elif p1[1] in owned:
         if p1[1] in p2_property:
             print(f'You have landed on {landmarks[p1[1]]} which is owned by your opponent')
             print('You are paying rent')
             p1[0] -= cost[p1[1]]
             p2[0] += cost[p1[1]]
-            return (f'You now have ${p1[0]}')
+            return f'You now have ${p1[0]}'
     else:
         print(f'You have landed on {landmarks[p1[1]]}')
-        return ('You have done nothing')
+        return 'You have done nothing'
 
 
 def player2():
     if p2[0] <= 60:
         global game_winner
         game_winner = 1
-        return ('Player 2 has gone bankrupt, Player 1 wins')
+        return 'Player 2 has gone bankrupt, Player 1 wins'
     print('Player 2 is rolling the dice...')
     time.sleep(1)
     x = dice()
@@ -147,13 +145,13 @@ def player2():
     if p2[1] in traps:
         if p2[1] == 5:
             p2[0] -= 200
-            return ('Player 2 has been hit by the Income Tax')
+            return 'Player 2 has been hit by the Income Tax'
         elif p2[1] == 39:
             p2[0] -= 400
-            return ('Player 2 has been hit by the Super Tax')
+            return 'Player 2 has been hit by the Super Tax'
         elif p2[1] == 31:
             p2[1] = 11
-            return ('Player 2 has been sent to Jail')
+            return 'Player 2 has been sent to Jail'
     elif p2[1] in purchasable:
         print(f'Player 2 has landed on {landmarks[p2[1]]} and it costs ${cost[p2[1]]}')
         if p2[0] >= cost[p2[1]]:
@@ -165,21 +163,21 @@ def player2():
                 p2_property.append(p2[1])
                 purchasable.remove(p2[1])
                 owned.append(p2[1])
-                return (f'Player 2 now has ${p2[0]}')
+                return f'Player 2 now has ${p2[0]}'
             else:
-                return ('Player 2 has decided not to buy the property')
+                return 'Player 2 has decided not to buy the property'
         else:
-            return ('Player 2 does not have enough money to buy the property')
+            return 'Player 2 does not have enough money to buy the property'
     elif p2[1] in owned:
         if p2[1] in p1_property:
             print(f'Player 2 has landed on {landmarks[p2[1]]} which is owned by Player 1')
             print('Player 2 is paying rent')
             p2[0] -= cost[p2[1]]
             p1[0] += cost[p2[1]]
-            return (f'Player 2 now has ${p2[0]}')
+            return f'Player 2 now has ${p2[0]}'
     else:
         print(f'Player 2 has landed on {landmarks[p2[1]]}')
-        return ('Player 2 has done nothing')
+        return 'Player 2 has done nothing'
 
 
 def choiice(x):
