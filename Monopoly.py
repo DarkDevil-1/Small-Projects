@@ -197,7 +197,9 @@ def choiice(x):
                 print(player1())
                 time.sleep(2)
                 print(cpu())
-            if p2[0] > p1[0]:
+            if len(p1_property) == len(p2_property):
+                print('It is a tie')
+            elif len(p2_property) > len(p1_property):
                 print('CPU wins')
             else:
                 print('You win')
@@ -217,7 +219,9 @@ def choiice(x):
                 print(player1())
                 time.sleep(2)
                 print(player2())
-            if p2[0] > p1[0]:
+            if len(p1_property) == len(p2_property):
+                print('It is a tie')
+            elif len(p2_property) > len(p1_property):
                 print('Player 2 wins')
             else:
                 print('Player 1 wins')
